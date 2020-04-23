@@ -1,0 +1,14 @@
+// First establish the kelvin temp stated as a variable (change number to current kelvinTemp)
+var kelvinTemp = 301;
+
+//Next conver kelvin to celsius
+var celsiusTemp = kelvinTemp-273.15;
+
+// Then convert celsius to fahrenheit
+var fahrenheitTemp = celsiusTemp*(9/5)+32;
+
+// After that we will round the value of fahrenheitTemp
+var fahrenheitTemp = Math.round(fahrenheitTemp);
+
+//Finally use concatenation to form a message using the temp
+console.log('The temperature is '+ fahrenheitTemp +' degrees Fahrenheit.');
