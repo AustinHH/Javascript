@@ -1,0 +1,60 @@
+function getUserChoice(userInput) {
+    userInput = userInput.toLowerCase();
+    if (userInput === 'rock' || userInput === 'paper' 
+    || userInput === 'scissors') {
+        return userInput;
+    } else {
+        return 'an invalid option';
+    }
+}
+
+function getComputerChoice() {
+    var randomNumber = Math.floor(Math.random() * 3);
+    if (randomNumber === 0) {
+        return 'rock';
+    }
+    if (randomNumber === 1) {
+        return 'paper';
+    }
+    if (randomNumber === 2) {
+        return 'scissors';
+    }
+}
+
+function determineWinner(userChoice,computerChoice) {
+    if (userChoice === computerChoice) {
+        return 'The game was a tie.';
+    }
+    if (userChoice === 'rock') {
+        if (computerChoice === 'paper') {
+            return 'You lost. Paper covers Rock. :(';
+        } else {
+            return 'You win! Rock smashes Scissors! :D';
+        }
+    }
+    if (userChoice === 'paper') {
+        if (computerChoice === 'scissors') {
+            return 'You lost. Scissors cuts Paper. :(';
+        } else {
+            return 'You win! Paper covers Rock! :D';
+        }
+    }
+    if (userChoice === 'scissors') {
+        if (computerChoice === 'rock') {
+            return 'You lost. Rock smashes Scissors. :(';
+        } else {
+            return 'You won! Scissors cuts Paper! :D';
+        }
+    }
+}
+
+function playGame() {
+    var promptUserChoice = prompt('Please choose rock, paper, or scissors!');
+    var userChoice = getUserChoice(promptUserChoice);
+    var computerChoice = getComputerChoice()
+    alert('You chose ' + userChoice +'.' +
+    ' The computer chose ' + computerChoice +'. '
+     + determineWinner(userChoice, computerChoice));
+}
+
+playGame();
