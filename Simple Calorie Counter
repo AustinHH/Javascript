@@ -1,0 +1,56 @@
+function inputCaloriesByDay(day) {
+    switch (day) {
+        case 'Monday':
+        return 3500;
+        break;
+        case 'Tuesday':
+        return 34000;
+        break;
+        case 'Wednesday':
+        return 1200;
+        break;
+        case 'Thursday':
+        return 1400;
+        break;
+        case 'Friday':
+        return 1600;
+        break;
+        case 'Saturday':
+        return 1700;
+        break;
+        case 'Sunday':
+        return 700;
+        break;
+     default: 
+        return 'Please choose a valid day';
+    }
+}
+
+function getTotalCalories() {
+   return inputCaloriesByDay('Monday') +
+    inputCaloriesByDay('Tuesday') +
+    inputCaloriesByDay('Wednesday') +
+    inputCaloriesByDay('Thursday') +
+    inputCaloriesByDay('Friday') +
+    inputCaloriesByDay('Saturday') +
+    inputCaloriesByDay('Sunday');
+}
+
+function getIdealCalories() {
+    var idealDailyCalories = 2500;
+    return idealDailyCalories * 7;
+}
+function calcutlateHealthPlan() {
+    var actualCalories = getTotalCalories();
+    var idealCalories = getIdealCalories();
+    if (actualCalories === idealCalories) {
+        return 'You ate the exact correct amount of calories';
+    }
+    if (actualCalories > idealCalories) {
+        return 'Time to work out!';
+    } else {
+        return 'Time for seconds!';
+    }
+}
+
+console.log(calcutlateHealthPlan());
