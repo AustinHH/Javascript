@@ -1,0 +1,41 @@
+var userName = prompt('Hi, I\'m the Magic Ball! What\'s your name?');
+if (userName) {
+    prompt('Welcome ' + userName + '! What is your yes or no question?');
+} else {
+    prompt('Welcome! What is your yes or no question?')
+}    
+alert('Hmmmmmm...... Let me see.')
+
+var randomNum = Math.floor(Math.random() * 9);
+
+switch(randomNum) {
+    case 0:
+    alert('It is decidedly so');
+    break;
+    case 1:
+    alert('Yes');
+    break;
+    case 2:
+    alert('Without a doubt');
+    break;
+    case 3:
+    alert('Reply hazy, Try again');
+    break;
+    case 4:
+    alert('Concetrate and ask again');
+    break;
+    case 5:
+    alert('Ask again later');
+    break;
+    case 6:
+    alert('My reply is NO!');
+    break;
+    case 7:
+    alert('Very doubtful');
+    break;
+    case 8:
+    alert('Don\'t count on it');
+    break;
+    default:
+    alert('There was an error. Try again please!')
+}
